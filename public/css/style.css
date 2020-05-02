@@ -1,0 +1,109 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    --background-color: #eee;
+    --text-color: #333;
+    --icon-color: rgb(145, 145, 145);
+
+    --twitter-blue: #1DA1F2;
+
+    --stagger-delay: 2500ms;
+}
+
+#placeHolderPage {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#placeHolderPage h4 {
+    font-size: 2.5em;
+    font-weight: normal;
+    color: var(--text-color);
+    margin-bottom: 1.5em;
+}
+
+#placeHolderPage h4 #hey {
+    opacity: 0;
+    animation: iconEntrance 700ms ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+#placeHolderPage h4 #see-ya {
+    opacity: 0;
+    animation: iconEntrance 700ms ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 900ms;
+}
+
+#placeHolderPage p {
+    opacity: 0;
+    font-size: 1.2em;
+    color: var(--text-color);
+    margin-bottom: .5em;
+    animation: iconEntrance 700ms ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 1750ms;
+}
+
+#placeHolderPage #social-links {
+    height: 100px;
+    display: grid;
+    gap: 1rem;
+
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@keyframes iconEntrance {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+#placeHolderPage svg {
+    margin: 2rem;
+    outline: none;
+}
+
+#placeHolderPage .social-icon {
+    width: 55px;
+    height: 55px;
+    animation: iconEntrance 700ms ease-in-out;
+    animation-delay: 1000ms;
+    animation-fill-mode: backwards;
+    filter: grayscale(100%);
+    transition: 300ms ease-in-out;
+}
+
+#placeHolderPage .social-icon:hover {
+    filter: grayscale(0%);
+    transition: 300ms ease-in-out;
+}
+
+#placeHolderPage .social-icon:nth-child(1){
+
+    animation-delay: calc(1 * var(--stagger-delay));
+}
+#placeHolderPage .social-icon:nth-child(2) {
+
+    animation-delay: calc(1.06 * var(--stagger-delay));
+}
+#placeHolderPage .social-icon:nth-child(3) {
+
+    animation-delay: calc(1.12 * var(--stagger-delay));
+}
+#placeHolderPage .social-icon:last-child {
+
+    animation-delay: calc(1.18 * var(--stagger-delay));
+}
