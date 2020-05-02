@@ -15,4 +15,4 @@ app.get('*', (req, res) => {
     res.redirect('/')
 })
 
-server.listen(5000)
+server.listen(process.env.PORT || 8080, () => console.log('Running'))
