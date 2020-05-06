@@ -1,6 +1,7 @@
 const express       = require('express')
 const app           = express()
-server              = require('http').Server(app)
+const server        = require('http').Server(app)
+const port          = process.env.PORT || 5000
 
 app.set('views', './views')
 app.set('view engine', 'ejs')
@@ -15,4 +16,4 @@ app.get('*', (req, res) => {
     res.redirect('/')
 })
 
-server.listen(process.env.PORT || 8080, () => console.log('Running'))
+server.listen(port, () => console.log(`App is running on port ${port}...`))

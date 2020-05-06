@@ -18,11 +18,12 @@ body {
 #placeHolderPage {
     width: 100vw;
     height: 100vh;
+    word-wrap: break-word;
     background-color: var(--background-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    padding: 2em;
 }
 
 #placeHolderPage h4 {
@@ -36,6 +37,11 @@ body {
     opacity: 0;
     animation: iconEntrance 700ms ease-in-out;
     animation-fill-mode: forwards;
+}
+
+#placeHolderPage h4 #hey:after {
+    content: "\a";
+    white-space: pre;
 }
 
 #placeHolderPage h4 #see-ya {
@@ -56,11 +62,10 @@ body {
 }
 
 #placeHolderPage #social-links {
-    height: 100px;
     display: grid;
-    gap: 1rem;
-
+    gap: .5rem;
     grid-template-columns: repeat(4, 1fr);
+    margin-top: 2em;
 }
 
 @keyframes iconEntrance {
@@ -72,13 +77,12 @@ body {
 }
 
 #placeHolderPage svg {
-    margin: 2rem;
     outline: none;
 }
 
 #placeHolderPage .social-icon {
-    width: 55px;
-    height: 55px;
+    width: 40px;
+    height: 40px;
     animation: iconEntrance 700ms ease-in-out;
     animation-delay: 1000ms;
     animation-fill-mode: backwards;
@@ -106,4 +110,28 @@ body {
 #placeHolderPage .social-icon:last-child {
 
     animation-delay: calc(1.18 * var(--stagger-delay));
+}
+
+@media (min-width: 576px) {
+    #placeHolderPage #social-links {
+        width: 50%;
+        margin: 3em auto;
+    }
+}
+@media (min-width: 768px) {
+    #placeHolderPage {
+        align-items: center;
+    }
+    #placeHolderPage h4 #hey:after {
+        content: unset;
+        white-space: unset;
+    }
+}
+@media (min-width: 992px) {
+
+}
+@media (min-width: 1200px) {
+    #placeHolderPage #social-links {
+        width: 30%;
+    }
 }
