@@ -163,6 +163,12 @@ input:checked + .slider:before {
     margin-top: 2em;
 }
 
+#placeHolderPage #social-links a {
+    width: 40px;
+    height: 40px;
+    outline: none;
+}
+
 @-webkit-keyframes iconEntrance {
     from {
         opacity: 0;
